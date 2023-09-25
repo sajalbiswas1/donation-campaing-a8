@@ -16,10 +16,10 @@ const Donation = () => {
                 apliedId.push(gear);
             }
         }
-    }, [])
+    }, [cards])
     console.log(mainCard)
     return (
-        <div>
+        <div className="grid grid-cols-2 w-10/12 m-auto">
             {
                 mainCard.map(card => <DonationCart key={card.id} card={card}></DonationCart>)
             }

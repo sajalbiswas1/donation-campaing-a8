@@ -1,15 +1,16 @@
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
         <div className="navbar w-10/12 m-auto">
             <div className="flex-1">
-                <img src="../../../public/image/Logo.png" alt="" />
+                <img src="https://i.ibb.co/wgC30W4/Logo.png" alt="" />
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li><a>Donation</a></li>
-                    <li><a>Statistics</a></li>
+                    <li><NavLink to={'/home'}>Home</NavLink></li>
+                    <li><NavLink to={`/donate`}>Donation</NavLink></li>
+                    <li><NavLink to={`/statistics`}>Statistics</NavLink></li>
                 </ul>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import './Card.css'
+
 const Card = ({ card }) => {
     const { id, Picture, Title, Category, Category_bg1, Category_bg2, Category_bg3 } = card;
     // const blue = `${Category === 'Health' && '[#0052FF]'}`;

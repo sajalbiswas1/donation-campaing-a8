@@ -6,17 +6,16 @@ const DonateDetails = () => {
     const { id } = useParams();
     const intId = parseInt(id);
     const donates = cards.find(card => card.id === intId);
-    
+    const {Category_bg3} =donates
     const handelSetLocalStore = ()=>{
         setLocalStorage(intId)
-        console.log(id)
     }
     return (
         <div className="mt-16 w-10/12 m-auto mb-24">
             <div className="relative ">
                 <img className="w-full rounded-lg" src={donates.Picture} alt="" />
                 <div className="absolute bg-[#0B0B0B80] p-9 bg-opacity-50 rounded-b-lg  bottom-0 w-full">
-                    <NavLink to={'/donation'}><button onClick={handelSetLocalStore} className="bg-red-700 px-6 py-4 rounded-md font-semibold text-xl text-white">Donate <span>{donates.Price}</span></button></NavLink>
+                    <NavLink to={'/donation'}><button style={{backgroundColor:Category_bg3}} onClick={handelSetLocalStore} className=" px-6 py-4 rounded-md font-semibold text-xl text-white">Donate <span>{donates.Price}</span></button></NavLink>
                 </div>
             </div>
 

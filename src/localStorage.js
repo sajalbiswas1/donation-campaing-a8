@@ -17,6 +17,10 @@ const setLocalStorage = id =>{
     if(!exist){
         getStoreId.push(id);
         localStorage.setItem('card-id', JSON.stringify(getStoreId))
+        return true
+    }
+    else{
+        return false
     }
 }
 export {getLocalStorage, setLocalStorage}

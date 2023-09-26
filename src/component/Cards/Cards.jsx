@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Card from "../Card/Card";
 import { useLoaderData } from "react-router-dom";
 

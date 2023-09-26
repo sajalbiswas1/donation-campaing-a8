@@ -12,6 +12,7 @@ const DonateDetails = () => {
     const donates = cards.find(card => card.id === intId);
     const {Category_bg3} =donates
     const handelSetLocalStore = ()=>{
+        
 
     const valu = setLocalStorage(intId);
     if(valu === true){

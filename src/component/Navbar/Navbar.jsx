@@ -8,9 +8,30 @@ const Navbar = () => {
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
-                    <li><NavLink to={'/'}>Home</NavLink></li>
-                    <li><NavLink to={`/donation`}>Donation</NavLink></li>
-                    <li><NavLink to={`/statistics`}>Statistics</NavLink></li>
+                    <li ><NavLink style={({ isActive}) => {
+                        return {
+                            fontWeight: isActive ? "bold" : "",
+                            color: isActive ? "red" : "",
+                            backgroundColor: isActive ? 'white' : '',
+                            textDecoration: isActive ? "underline" : '',
+                        };
+                    }} to={'/'}>Home</NavLink></li>
+                    <li><NavLink style={({ isActive}) => {
+                        return {
+                            fontWeight: isActive ? "bold" : "",
+                            color: isActive ? "red" : "",
+                            backgroundColor: isActive ? 'white' : '',
+                            textDecoration: isActive ? "underline" : '',
+                        };
+                    }} to={`/donation`}>Donation</NavLink></li>
+                    <li><NavLink style={({ isActive}) => {
+                        return {
+                            fontWeight: isActive ? "bold" : "",
+                            color: isActive ? "red" : "",
+                            backgroundColor: isActive ? 'white' : '',
+                            textDecoration: isActive ? "underline" : '',
+                        };
+                    }} to={`/statistics`}>Statistics</NavLink></li>
                 </ul>
             </div>
         </div>

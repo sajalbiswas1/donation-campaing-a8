@@ -1,13 +1,13 @@
-import { Cell, Pie, PieChart } from "recharts";
+import { Cell, Pie, PieChart, Tooltip } from "recharts";
 import { getCard } from "../../localStorage";
-// import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 const Statistics = () => {
     const ids = getCard()
     const basic = 12 - ids
     let data = [
-        { "name": "Group A", "value": basic },
-        { "name": "Group B", "value": ids }
+        { "name": "Total Donation", "value": basic },
+        { "name": "Your Donation", "value": ids }
     ];
 
     console.log(data)
@@ -29,21 +29,25 @@ const Statistics = () => {
 
 
 
-    // const useWindowSize = () => {
-    //     const [size, setSize] = useState([0, 0]);
-    //     useLayoutEffect(() => {
-    //       function updateSize() {
-    //         setSize([window.innerWidth, window.innerHeight]);
-    //       }
-    //       window.addEventListener("resize", updateSize);
-    //       updateSize();
-    //       return () => window.removeEventListener("resize", updateSize);
-    //     }, []);
-    //     return size;
-    //   };
-      
-    //     const [width, height] = useWindowSize();
-    //     console.log(width,height)
+    const useWindowSize = () => {
+        const [size, setSize] = useState([0, 0]);
+        useLayoutEffect(() => {
+            function updateSize() {
+                setSize([window.innerWidth, window.innerHeight]);
+            }
+            window.addEventListener("resize", updateSize);
+            updateSize();
+            return () => window.removeEventListener("resize", updateSize);
+        }, []);
+        return size;
+    };
+
+    const [width, height] = useWindowSize();
+    let handelWith = 500;
+    if (width < 768) {
+        handelWith = 300;
+    }
+    console.log(handelWith, height)
 
 
 
@@ -52,13 +56,15 @@ const Statistics = () => {
         <div className="flex justify-center w-10/12 m-auto mb-10">
 
             <div>
-                
-                    <PieChart className="text-3xl font-bold m-0 p-0" height={380} width={380}>
-                        <Pie data={data} dataKey={"value"} nameKey={'name'} cx={"50%"} cy={"50%"} fill="#8884d8" label={renderCustomizedLabel} labelLine={false}>{data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}</Pie>
-                    </PieChart>
-             
+
+                <PieChart className="md:text-3xl text-xl font-bold m-0 p-0" height={handelWith} width={handelWith}> <Tooltip/>
+                    <Pie data={data} dataKey={"value"} nameKey={'name'} cx={"50%"} cy={"50%"} fill="#8884d8" label={renderCustomizedLabel} labelLine={false}>{data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                       
+                    </Pie>
+                </PieChart>
+
 
                 <div className="flex gap-5 justify-center">
                     <p className="font-normal md:text-lg text-xs flex items-center md:gap-5 gap-2">Your Donation <span><hr className="bg-[#00C49F] h-3 lg:w-24 md:w-24 w-8 rounded-sm" /></span></p>

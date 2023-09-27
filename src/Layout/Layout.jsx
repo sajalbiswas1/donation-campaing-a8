@@ -8,28 +8,28 @@ import Statistics from "../component/Statistics/Statistics";
 
 const myCreateRouter = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: <MainPage></MainPage>,
         errorElement: <ErrorPage></ErrorPage>,
-        children:([
+        children: ([
             {
-                path:'/',
+                path: '/',
                 element: <Home></Home>,
-                loader:()=>fetch('donate.json')
+                loader: () => fetch('/donate.json')
             },
             {
-                path:'/donate/:id',
-                element:<DonateDetails></DonateDetails>,
-                loader:()=>fetch('donate.json')
+                path: '/donate/:id',
+                element: <DonateDetails></DonateDetails>,
+                loader: () => fetch('/donate.json')
             },
             {
-                path:'/donation',
+                path: '/donation',
                 element: <Donation></Donation>,
-                loader: ()=>fetch('/donate.json')
+                loader: () => fetch('/donate.json')
             },
             {
-                path:'/Statistics',
-                element:<Statistics></Statistics>
+                path: '/Statistics',
+                element: <Statistics></Statistics>
             }
         ])
     }

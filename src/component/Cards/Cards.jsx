@@ -1,5 +1,6 @@
 import Card from "../Card/Card";
 import { useLoaderData } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Cards = ({ seeValue }) => {
     const data = useLoaderData();
@@ -38,7 +39,7 @@ const Cards = ({ seeValue }) => {
     }
 
     return (
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 w-10/12 m-auto mt-24 mb-48">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 w-10/12 m-auto lg:mt-24 md:mt-24 mt-5 mb-48">
             {
                 hello.map(card => <Card key={card.id} card={card}></Card>)
             }
@@ -46,4 +47,7 @@ const Cards = ({ seeValue }) => {
     );
 };
 
+Cards.propTypes = {
+    seeValue: PropTypes.string
+}
 export default Cards;

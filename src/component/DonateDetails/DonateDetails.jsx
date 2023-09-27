@@ -7,7 +7,7 @@ const DonateDetails = () => {
     const cards = useLoaderData();
     const { id } = useParams();
     const notify = () => toast.success("Donate Successfully");
-    const notify2 = () => toast.error("This is Duplicate");
+    const notify2 = () => toast.error("Already Donate");
     const intId = parseInt(id);
     const donates = cards.find(card => card.id === intId);
     const {Category_bg3} =donates
@@ -25,11 +25,11 @@ const DonateDetails = () => {
     }
 
     return (
-        <div className="mt-16 w-10/12 m-auto mb-24">
+            <div className="mt-16 w-10/12 m-auto mb-24">
             <div className="relative ">
                 <img className="w-full rounded-lg" src={donates.Picture} alt="" />
-                <div className="absolute bg-[#0B0B0B80] p-9 bg-opacity-50 rounded-b-lg  bottom-0 w-full">
-                    <button style={{backgroundColor:Category_bg3}} onClick={handelSetLocalStore} className=" px-6 py-4 rounded-md font-semibold text-xl text-white">Donate <span>{donates.Price}</span></button>
+                <div className="absolute bg-[#0B0B0B80] md:p-9 p-4 bg-opacity-50 rounded-b-lg  bottom-0 w-full">
+                    <button style={{backgroundColor:Category_bg3}} onClick={handelSetLocalStore} className=" md:px-6 px-3 md:py-4 py-2 rounded-md font-semibold md:text-xl text-sm text-white">Donate <span>{donates.Price}</span></button>
                 </div>
             </div>
 

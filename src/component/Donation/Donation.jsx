@@ -21,7 +21,7 @@ const Donation = () => {
     console.log(mainCard)
     return (
         <div className="mb-32">
-            <div className="grid grid-cols-2 gap-6 w-10/12 m-auto mt-16">
+            <div className="grid lg:grid-cols-2 gap-6 w-10/12 m-auto mt-16">
                 {
                     mainCard.slice(0,dataLenth).map(card => <DonationCart key={card.id} card={card}></DonationCart>)
                 }

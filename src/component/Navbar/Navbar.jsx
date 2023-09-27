@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="navbar w-10/12 m-auto">
-            <div className="flex-1">
+        <div className="lg:flex md:flex text-center flex-row justify-between items-center py-2 w-10/12 m-auto">
+            <div className="flex justify-center">
                 <img src="https://i.ibb.co/wgC30W4/Logo.png" alt="" />
             </div>
             <div className="flex-none">
@@ -15,7 +15,7 @@ const Navbar = () => {
                             backgroundColor: isActive ? 'white' : '',
                             textDecoration: isActive ? "underline" : '',
                         };
-                    }} to={'/'}>Home</NavLink></li>
+                    }} to={`/`}>Home</NavLink></li>
                     <li><NavLink style={({ isActive}) => {
                         return {
                             fontWeight: isActive ? "bold" : "",

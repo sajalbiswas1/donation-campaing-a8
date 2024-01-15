@@ -6,7 +6,8 @@ const Home = () => {
     const [seeValue, setSeeValue] = useState('')
     const handelSetValue = (e) => {
         e.preventDefault()
-        setSeeValue(e.target.search.value)
+       const lower =  e.target.search.value
+       setSeeValue(lower.toLowerCase())
     }
 
     return (

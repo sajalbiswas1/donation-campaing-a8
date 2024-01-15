@@ -10,7 +10,7 @@ const Statistics = () => {
         { "name": "Your Donation", "value": ids }
     ];
 
-    console.log(data)
+    // console.log(data)
 
 
     const COLORS = ['#FF444A', '#00C49F'];
@@ -43,11 +43,11 @@ const Statistics = () => {
     };
 
     const [width, height] = useWindowSize();
+    console.log(width,height)
     let handelWith = 500;
     if (width < 768) {
         handelWith = 300;
     }
-    console.log(handelWith, height)
 
 
 

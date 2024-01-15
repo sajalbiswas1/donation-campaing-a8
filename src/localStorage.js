@@ -30,7 +30,7 @@ const getCard = () => {
     // const hello = ids.reduce((a,b)=>a+b)
     // return hello;
     let num = 0;
-    for(const is of ids){
+    for(const id of ids){
         num = num +1
     }
     return num;
